@@ -1,0 +1,11 @@
+id,name,quantity,category,location,note,url
+f47ac10b-58cc-4372-a567-0e02b2c3d479,Hammer,5,Tool,Shelf A1,Claw hammer for general use,https://example.com/hammer
+a1b2c3d4-e5f6-7890-abcd-ef1234567890,Screwdriver Set,3,Tool,Shelf A2,Phillips and flathead set,https://example.com/screwdriver-set
+b2c3d4e5-f6a7-8901-bcde-f12345678901,Resistor Pack,200,Electronics,Bin E1,Mixed resistor values 1k-10k ohm,https://example.com/resistor-pack
+c3d4e5f6-a7b8-9012-cdef-123456789012,Arduino Uno,10,Electronics,Bin E2,Microcontroller board Rev3,https://example.com/arduino-uno
+d4e5f6a7-b8c9-0123-defa-234567890123,Bolt M6x20,150,Part,Bin P1,Stainless steel hex bolt,https://example.com/bolt-m6
+e5f6a7b8-c9d0-1234-efab-345678901234,Wrench Set,2,Tool,Shelf A3,Combination wrench set 8-19mm,https://example.com/wrench-set
+f6a7b8c9-d0e1-2345-fabc-456789012345,LED Strip 5m,8,Electronics,Bin E3,RGB LED strip 12V,https://example.com/led-strip
+a7b8c9d0-e1f2-3456-abcd-567890123456,Bearing 608ZZ,50,Part,Bin P2,8x22x7mm shielded bearing,https://example.com/bearing-608
+b8c9d0e1-f2a3-4567-bcde-678901234567,Drill Bit Set,4,Tool,Shelf A4,HSS drill bits 1-10mm,https://example.com/drill-bits
+c9d0e1f2-a3b4-5678-cdef-789012345678,Raspberry Pi 4,6,Electronics,Bin E4,4GB RAM model,https://example.com/rpi4
