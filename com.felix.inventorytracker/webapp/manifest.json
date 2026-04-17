@@ -7,6 +7,15 @@
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
+    "dataSources": {
+      "itemsRemote":{
+        "uri": "/odata/v4/catalogue/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    },
 		"applicationVersion": {
 			"version": "${version}"
 		},
@@ -57,7 +66,13 @@
 					"fallbackLocale": "en",
 					"async": true
 				}
-			}
+			},
+      "items": {
+          "type": "sap.ui.model.odata.v4.ODataModel",
+          "dataSource": "itemsRemote"
+
+        }
+
 		},
 
 		"routing": {

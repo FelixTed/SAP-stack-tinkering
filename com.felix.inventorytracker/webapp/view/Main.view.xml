@@ -12,18 +12,27 @@
 		title="{i18n>appTitle}"
 		id="page">
 		<content>
-			<IllustratedMessage
-				title="{i18n>appTitle}"
-				illustrationType="sapIllus-SuccessHighFive"
-				enableVerticalResponsiveness="true"
-				description="{i18n>appDescription}">
-				<additionalContent>
-					<Button
-						id="helloButton"
-						text="{formatter: 'formatter.formatValue', path: 'i18n>btnText'}"
-						press="sayHello" />
-				</additionalContent>
-			</IllustratedMessage>
+			<Table
+      id="itemsTable"
+      items="{items>/Item}"
+      >
+      <columns>
+        <Column >
+          <header><Text text="Name"></Text></header>
+        </Column>
+        <Column >
+          <header><Text text="Quantity"></Text></header>
+        </Column>
+      </columns>
+      <items>
+          <ColumnListItem>
+            <cells>
+                <Text text="{items>name}" />
+                <Text text="{items>quantity}" />
+            </cells>
+          </ColumnListItem>
+      </items>
+       </Table>
 		</content>
 	</Page>
 
