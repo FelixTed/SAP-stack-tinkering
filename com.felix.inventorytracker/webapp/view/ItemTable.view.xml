@@ -1,0 +1,27 @@
+<mvc:View
+  xmlns='sap.m'
+  xmlns:mvc="sap.ui.core.mvc"
+
+>
+<Table
+      id="itemsTable"
+      items="{items>/Item}"
+      >
+      <columns>
+        <Column >
+          <header><Text text="Name"></Text></header>
+        </Column>
+        <Column >
+          <header><Text text="Quantity"></Text></header>
+        </Column>
+      </columns>
+      <items>
+          <ColumnListItem>
+            <cells>
+                <Text text="{items>name}" />
+                <Text text="{items>quantity}" />
+            </cells>
+          </ColumnListItem>
+      </items>
+</Table>
+</mvc:View>

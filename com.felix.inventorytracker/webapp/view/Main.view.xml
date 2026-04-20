@@ -10,29 +10,11 @@
 
 	<Page
 		title="{i18n>appTitle}"
-		id="page">
+		id="page"
+  >
 		<content>
-			<Table
-      id="itemsTable"
-      items="{items>/Item}"
-      >
-      <columns>
-        <Column >
-          <header><Text text="Name"></Text></header>
-        </Column>
-        <Column >
-          <header><Text text="Quantity"></Text></header>
-        </Column>
-      </columns>
-      <items>
-          <ColumnListItem>
-            <cells>
-                <Text text="{items>name}" />
-                <Text text="{items>quantity}" />
-            </cells>
-          </ColumnListItem>
-      </items>
-       </Table>
+      <mvc:XMLView viewName="com.felix.inventoryTracker.view.ItemForm"></mvc:XMLView>
+      <mvc:XMLView viewName="com.felix.inventoryTracker.view.ItemTable"></mvc:XMLView>
 		</content>
 	</Page>
 

@@ -1,0 +1,42 @@
+<mvc:View
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:form="sap.ui.layout.form"
+>
+  <VBox width="100%" class="sapUiSmallMargin">
+    <form:Form editable="true" width="100%">
+      <form:layout>
+        <form:ResponsiveGridLayout
+          columnsXL="1"
+          columnsL="1"
+          columnsM="1"
+          labelSpanXL="2"
+          labelSpanL="2"
+          labelSpanM="3"
+          adjustLabelSpan="false"
+        />
+      </form:layout>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Item Name" />
+          </form:label>
+          <form:fields>
+            <Input width="100%" placeholder="Enter item name" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Item Quantity" />
+          </form:label>
+          <form:fields>
+            <Input type="Number" width="100%" placeholder="Enter item name" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+    </form:Form>
+  </VBox>
+</mvc:View>
+
