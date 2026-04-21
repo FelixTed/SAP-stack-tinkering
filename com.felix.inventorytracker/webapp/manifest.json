@@ -64,8 +64,8 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "com.felix.inventoryTracker.i18n.i18n",
-					"supportedLocales": ["en", "de"],
-					"fallbackLocale": "en",
+					"supportedLocales": ["","en", "de"],
+					"fallbackLocale": "",
 					"async": true
 				}
 			},
@@ -73,7 +73,20 @@
           "type": "sap.ui.model.odata.v4.ODataModel",
           "dataSource": "itemsRemote"
 
+      },
+      "itemUIErrors": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          "data": {
+            "name": "",
+            "quantiy": "",
+            "category": "",
+            "location": "",
+            "url": ""
+          }
         }
+      }
+
 
 		},
 

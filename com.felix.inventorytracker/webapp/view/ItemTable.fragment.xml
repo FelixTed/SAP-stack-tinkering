@@ -15,12 +15,20 @@
         <Column >
           <header><Text text="Quantity"></Text></header>
         </Column>
+        <Column >
+          <header><Text text="Location"></Text></header>
+        </Column>
+        <Column >
+          <header><Text text="Link"></Text></header>
+        </Column>
       </columns>
       <items>
           <ColumnListItem>
             <cells>
                 <Text text="{items>name}" />
                 <Text text="{items>quantity}" />
+                <Text text="{items>location}"></Text>
+                <Link text="Get {items>name}" href="{items>url}"></Link>
             </cells>
           </ColumnListItem>
       </items>

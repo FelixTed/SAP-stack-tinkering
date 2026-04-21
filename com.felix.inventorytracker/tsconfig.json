@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "strict": false,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "noEmit": true,
+    "types": ["@openui5/types", "qunit", "node"]
+  },
+  "include": [
+    "webapp/**/*.ts"
+  ],
+  "exclude": [
+    "webapp/test/e2e/**"
+  ]
+}

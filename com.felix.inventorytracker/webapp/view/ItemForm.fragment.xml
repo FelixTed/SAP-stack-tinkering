@@ -23,7 +23,7 @@
             <Label text="Item Name" />
           </form:label>
           <form:fields>
-            <Input value="{draft>/name}" width="100%" placeholder="Enter item name" />
+            <Input valueState="{= ${itemUIErrors>/name} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/name}" value="{draft>/name}" width="100%" placeholder="Enter item name" />
           </form:fields>
         </form:FormElement>
       </form:FormContainer>
@@ -33,7 +33,7 @@
             <Label text="Item Quantity" />
           </form:label>
           <form:fields>
-            <Input value="{draft>/quantity}" type="Number" width="100%" placeholder="Enter item name" />
+            <Input valueState="{= ${itemUIErrors>/quantity} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/quantity}" value="{draft>/quantity}" type="Number" width="100%" placeholder="Enter item name" />
           </form:fields>
         </form:FormElement>
       </form:FormContainer>
@@ -43,7 +43,7 @@
             <Label  text="Item Category" />
           </form:label>
           <form:fields>
-            <Input value="{draft>/category}" type="Text" width="100%" placeholder="Enter category" />
+            <Input valueState="{= ${itemUIErrors>/category} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/category}" value="{draft>/category}" type="Text" width="100%" placeholder="Enter category" />
           </form:fields>
         </form:FormElement>
       </form:FormContainer>
@@ -53,7 +53,7 @@
             <Label text="Item Location" />
           </form:label>
           <form:fields>
-            <Input value="{draft>/location}" type="Text" width="100%" placeholder="Enter location" />
+            <Input valueState="{= ${itemUIErrors>/location} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/location}" value="{draft>/location}" type="Text" width="100%" placeholder="Enter location" />
           </form:fields>
         </form:FormElement>
       </form:FormContainer>
@@ -63,7 +63,7 @@
             <Label text="Note" />
           </form:label>
           <form:fields>
-            <Input value="{draft>/note}" type="Text" width="100%" placeholder="Enter note" />
+            <Input valueState="{= ${itemUIErrors>/note} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/note}" value="{draft>/note}" type="Text" width="100%" placeholder="Enter note" />
           </form:fields>
         </form:FormElement>
       </form:FormContainer>
@@ -73,7 +73,7 @@
             <Label text="Item URL" />
           </form:label>
           <form:fields>
-            <Input value="{draft>/url}" type="Text" width="100%" placeholder="Enter link to item" />
+            <Input valueState="{= ${itemUIErrors>/url} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/url}" value="{draft>/url}" type="Text" width="100%" placeholder="Enter link to item" />
           </form:fields>
         </form:FormElement>
       </form:FormContainer>

@@ -1,4 +1,9 @@
-sap.ui.define(["./BaseController", "sap/m/MessageBox", "sap/ui/model/json/JSONModel"], function (BaseController, MessageBox, JSONModel) {
+import { IItem } from "../interfaces/Item";
+
+sap.ui.define([
+	"./BaseController", "sap/m/MessageBox", "sap/ui/model/json/JSONModel",
+	"../model/ItemValidator"
+], function (BaseController, MessageBox, JSONModel, ItemValidator) {
 	"use strict";
 
 	return BaseController.extend("com.felix.inventoryTracker.controller.Main", {
@@ -16,7 +21,14 @@ sap.ui.define(["./BaseController", "sap/m/MessageBox", "sap/ui/model/json/JSONMo
 		onSubmit: async function () {
 			const oItemsModel = this.getOwnerComponent().getModel("items");
 			const oDraftModel = this.getView().getModel("draft");
-			const oDraft = oDraftModel.getData();
+			const oErrorModel = this.getView().getModel("itemUIErrors");
+			const oBundle = await this.getView().getModel("i18n").getResourceBundle();
+			const oDraft: IItem = oDraftModel.getData();
+
+			const error = ItemValidator.validateItem(oDraft,oBundle,oErrorModel);
+			if(error){
+				return;
+			}
 
 			oItemsModel.bindList("/Item").create({
 				name: oDraft.name,
