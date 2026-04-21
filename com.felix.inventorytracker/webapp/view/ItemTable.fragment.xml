@@ -1,6 +1,7 @@
-<mvc:View
+<core:FragmentDefinition
   xmlns='sap.m'
   xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
 
 >
 <Table
@@ -24,4 +25,5 @@
           </ColumnListItem>
       </items>
 </Table>
-</mvc:View>
+</core:FragmentDefinition>
+

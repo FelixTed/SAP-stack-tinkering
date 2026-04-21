@@ -1,0 +1,86 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+>
+  <VBox class="sapUiSmallMargin">
+    <form:Form editable="true">
+      <form:layout>
+        <form:ResponsiveGridLayout
+          columnsXL="1"
+          columnsL="1"
+          columnsM="1"
+          labelSpanXL="2"
+          labelSpanL="2"
+          labelSpanM="3"
+          adjustLabelSpan="false"
+        />
+      </form:layout>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Item Name" />
+          </form:label>
+          <form:fields>
+            <Input value="{draft>/name}" width="100%" placeholder="Enter item name" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Item Quantity" />
+          </form:label>
+          <form:fields>
+            <Input value="{draft>/quantity}" type="Number" width="100%" placeholder="Enter item name" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label  text="Item Category" />
+          </form:label>
+          <form:fields>
+            <Input value="{draft>/category}" type="Text" width="100%" placeholder="Enter category" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Item Location" />
+          </form:label>
+          <form:fields>
+            <Input value="{draft>/location}" type="Text" width="100%" placeholder="Enter location" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Note" />
+          </form:label>
+          <form:fields>
+            <Input value="{draft>/note}" type="Text" width="100%" placeholder="Enter note" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+      <form:FormContainer>
+        <form:FormElement>
+          <form:label>
+            <Label text="Item URL" />
+          </form:label>
+          <form:fields>
+            <Input value="{draft>/url}" type="Text" width="100%" placeholder="Enter link to item" />
+          </form:fields>
+        </form:FormElement>
+      </form:FormContainer>
+    </form:Form>
+    <HBox justifyContent="End" class="sapUiTinyMarginTop">
+      <Button text="Submit" type="Emphasized" press=".onSubmit"/>
+    </HBox>
+  </VBox>
+</core:FragmentDefinition>
+
