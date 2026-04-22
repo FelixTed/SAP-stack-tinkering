@@ -10,5 +10,17 @@
   "scripts": {
     "start": "cds-serve"
   },
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "alice": {
+            "roles": ["user"]
+          }
+        }
+      }
+    }
+  },
   "private": true
 }

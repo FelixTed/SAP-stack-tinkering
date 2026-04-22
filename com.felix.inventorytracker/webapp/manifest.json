@@ -12,6 +12,9 @@
         "uri": "/odata/v4/catalogue/",
         "type": "OData",
         "settings": {
+          "headers": {
+            "Authorization": "Basic YWxpY2U6"
+          },
           "odataVersion": "4.0"
         }
       }

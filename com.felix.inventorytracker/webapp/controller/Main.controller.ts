@@ -30,7 +30,7 @@ sap.ui.define([
 				return;
 			}
 
-			oItemsModel.bindList("/Item").create({
+			const createdContext = oItemsModel.bindList("/Item").create({
 				name: oDraft.name,
 				quantity: Number(oDraft.quantity) || 0,
 				category: oDraft.category,
@@ -40,6 +40,7 @@ sap.ui.define([
 			});
 
 			await oItemsModel.submitBatch("$auto");
+			await createdContext.created();
 
 			oDraftModel.setData({
 				name: "",
@@ -49,6 +50,7 @@ sap.ui.define([
 				note: "",
 				url: ""
 			});
+			oItemsModel.refresh();
 
 			MessageBox.success("Item created");
 		}
