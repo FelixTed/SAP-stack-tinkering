@@ -12,8 +12,14 @@
 		title="{i18n>appTitle}"
 		id="page"
   >
+  <customHeader>
+    <Toolbar>
+      <Title text="Items"/>
+      <ToolbarSpacer/>
+      <Button text="Create" press=".onCreate"/>
+    </Toolbar>
+  </customHeader>
 		<content>
-      <core:Fragment  fragmentName="com.felix.inventoryTracker.view.ItemForm" type="XML"/>
       <core:Fragment fragmentName="com.felix.inventoryTracker.view.ItemTable" type="XML"/>
 		</content>
 	</Page>

@@ -73,9 +73,11 @@
 				}
 			},
       "items": {
-          "type": "sap.ui.model.odata.v4.ODataModel",
-          "dataSource": "itemsRemote"
-
+        "type": "sap.ui.model.odata.v4.ODataModel",
+        "dataSource": "itemsRemote",
+        "settings": {
+          "operationMode": "Server"
+        }
       },
       "itemUIErrors": {
         "type": "sap.ui.model.json.JSONModel",
@@ -106,13 +108,22 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
-				}
+				},
+        {
+          "pattern": "new",
+          "name": "new-item",
+          "target": "new-item"
+        }
 			],
 			"targets": {
 				"main": {
 					"viewId": "main",
 					"viewName": "Main"
-				}
+				},
+        "new-item": {
+          "viewId": "new-item",
+          "viewName": "NewItem"
+        }
 			}
 		}
 	}

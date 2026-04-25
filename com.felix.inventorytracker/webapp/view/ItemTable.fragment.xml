@@ -5,8 +5,14 @@
 
 >
 <Table
+      headerText="Items"
       id="itemsTable"
-      items="{items>/Item}"
+      items="{
+        path: 'items>/Item',
+        sorter:
+          [{path:'quantity'}, {path: 'location', descending: true}]
+
+      }"
       >
       <columns>
         <Column >

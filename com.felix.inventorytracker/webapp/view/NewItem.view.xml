@@ -1,0 +1,22 @@
+<mvc:View
+	controllerName="com.felix.inventoryTracker.controller.Form"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'com/felix/inventoryTracker/model/formatter'
+	}">
+
+	<Page
+		title="{i18n>appTitle}"
+		id="form-page"
+    showNavButton="true"
+    navButtonPress=".onBack"
+  >
+		<content>
+      <core:Fragment  fragmentName="com.felix.inventoryTracker.view.ItemForm" type="XML"/>
+		</content>
+	</Page>
+
+</mvc:View>
