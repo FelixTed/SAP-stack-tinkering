@@ -2,11 +2,12 @@ import { IItem } from "../interfaces/Item";
 
 sap.ui.define(
 	[
-		"./BaseController", "sap/ui/model/json/JSONModel", "sap/m/MessageBox", "../model/ItemValidator"
+		"./BaseController", "sap/ui/model/json/JSONModel", "sap/m/MessageBox", "../model/ItemValidator","sap/ui/core/Messaging"
 	],
-	function(BaseController, JSONModel, MessageBox, ItemValidator) {
+	function(BaseController, JSONModel, MessageBox, ItemValidator, Messaging) {
 		return BaseController.extend("com.felix.inventoryTracker.controller.Form", {
 			onInit(){
+				Messaging.registerObject(this.getView(), true);
 				console.log("VIEW INIT")
 				this.getView().setModel(new JSONModel({
 					name: "",
@@ -41,6 +42,27 @@ sap.ui.define(
 				await oItemsModel.submitBatch("$auto");
 				await createdContext.created();
 
+				const messages = Messaging.getMessageModel().getData();
+				if (messages.length) {
+					const message = messages[0];
+					switch(message.type) {
+						case "Error":
+							MessageBox.error(message.message);
+							break;
+						case "Warning":
+							MessageBox.warning(message.message);
+							break;
+						case "Success":
+							MessageBox.success(message.message);
+							break;
+						case "Information":
+							MessageBox.information(message.message);
+							break;
+						default:
+							MessageBox.information(message.message);
+					}
+				}
+
 				oDraftModel.setData({
 					name: "",
 					quantity: 0,
@@ -51,7 +73,6 @@ sap.ui.define(
 				});
 				oItemsModel.refresh();
 
-				MessageBox.success("Item created");
 			},
 			onBack(){
 				this.getRouter().navTo("main");
