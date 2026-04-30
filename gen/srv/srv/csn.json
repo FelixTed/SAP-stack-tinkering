@@ -1,0 +1,171 @@
+{
+  "definitions": {
+    "catalogue.Category": {
+      "kind": "type",
+      "type": "cds.String",
+      "enum": {
+        "Tool": {},
+        "Part": {},
+        "Electronics": {}
+      }
+    },
+    "catalogue.Item": {
+      "kind": "entity",
+      "elements": {
+        "id": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "quantity": {
+          "type": "cds.Integer"
+        },
+        "category": {
+          "type": "catalogue.Category"
+        },
+        "location": {
+          "type": "cds.String"
+        },
+        "note": {
+          "type": "cds.String"
+        },
+        "url": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "CatalogueService": {
+      "@source": "srv/catalogue.service.cds",
+      "kind": "service"
+    },
+    "CatalogueService.Item": {
+      "kind": "entity",
+      "@restrict": [
+        {
+          "grant": [
+            "READ",
+            "WRITE"
+          ],
+          "to": "user"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "catalogue.Item"
+          ]
+        }
+      },
+      "elements": {
+        "id": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        },
+        "quantity": {
+          "type": "cds.Integer"
+        },
+        "category": {
+          "type": "catalogue.Category"
+        },
+        "location": {
+          "type": "cds.String"
+        },
+        "note": {
+          "type": "cds.String"
+        },
+        "url": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "LocationService": {
+      "@source": "srv/location.service.cds",
+      "kind": "service"
+    },
+    "LocationService.City": {
+      "kind": "entity",
+      "elements": {
+        "name": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "country": {
+          "type": "cds.String"
+        }
+      }
+    },
+    "LocationService.searchCities": {
+      "kind": "function",
+      "params": {
+        "q": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "items": {
+          "type": "LocationService.City"
+        }
+      }
+    },
+    "cds.outbox.Messages": {
+      "kind": "entity",
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "timestamp": {
+          "type": "cds.Timestamp"
+        },
+        "target": {
+          "type": "cds.String"
+        },
+        "msg": {
+          "type": "cds.LargeString"
+        },
+        "attempts": {
+          "type": "cds.Integer",
+          "default": {
+            "val": 0
+          }
+        },
+        "partition": {
+          "type": "cds.Integer",
+          "default": {
+            "val": 0
+          }
+        },
+        "lastError": {
+          "type": "cds.LargeString"
+        },
+        "lastAttemptTimestamp": {
+          "type": "cds.Timestamp"
+        },
+        "status": {
+          "type": "cds.String",
+          "length": 23
+        },
+        "task": {
+          "type": "cds.String",
+          "length": 255
+        },
+        "appid": {
+          "type": "cds.String",
+          "length": 255
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v6.9.0",
+    "compilerVersion": "6.9.0",
+    "compilerCsnFlavor": "inferred",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

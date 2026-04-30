@@ -3,11 +3,26 @@
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "Bundler",
-    "strict": false,
+    "strict": true,
     "skipLibCheck": true,
-    "allowJs": false,
+    "allowJs": true,
     "noEmit": true,
-    "types": ["@openui5/types", "qunit", "node"]
+    "types": [
+      "@openui5/types",
+      "qunit",
+      "node"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "paths": {
+      "@sap/cds": [
+        "./node_modules/@cap-js/cds-types"
+      ],
+      "#cds-models/*": [
+        "./@cds-models/*"
+      ]
+    }
   },
   "include": [
     "webapp/**/*.ts"

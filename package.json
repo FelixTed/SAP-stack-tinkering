@@ -5,22 +5,37 @@
     "@sap/cds": "^9"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2"
+    "@cap-js/sqlite": "^2",
+    "@cap-js/cds-types": "^0.15.0",
+    "@types/node": "^24.0.0",
+    "tsx": "^4",
+    "typescript": "^5",
+    "@cap-js/cds-typer": ">=0.1"
   },
   "scripts": {
     "start": "cds-serve"
   },
   "cds": {
+    "build": {
+      "tasks": [
+        { "src": "srv", "for": "nodejs", "options": { "model": ["db", "srv", "@sap/cds/srv/outbox"] } }
+      ]
+    },
     "requires": {
       "auth": {
         "kind": "mocked",
         "users": {
           "alice": {
-            "roles": ["user"]
+            "roles": [
+              "user"
+            ]
           }
         }
       }
     }
   },
-  "private": true
+  "private": true,
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  }
 }

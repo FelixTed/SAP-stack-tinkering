@@ -12,7 +12,7 @@
 		title="{i18n>appTitle}"
 		id="form-page"
     showNavButton="true"
-    navButtonPress=".onBack"
+	navButtonPress="onBack"
   >
 		<content>
       <core:Fragment  fragmentName="com.felix.inventoryTracker.view.ItemForm" type="XML"/>

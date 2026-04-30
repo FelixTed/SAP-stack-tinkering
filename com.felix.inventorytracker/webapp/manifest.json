@@ -17,6 +17,16 @@
           },
           "odataVersion": "4.0"
         }
+      },
+      "locationsRemote":{
+        "uri": "/odata/v4/location/",
+        "type": "OData",
+        "settings": {
+          "headers": {
+            "Authorization": "Basic YWxpY2U6"
+          },
+          "odataVersion": "4.0"
+        }
       }
     },
 		"applicationVersion": {
@@ -79,6 +89,13 @@
           "operationMode": "Server"
         }
       },
+      "locations": {
+        "type": "sap.ui.model.odata.v4.ODataModel",
+        "dataSource": "locationsRemote",
+        "settings": {
+          "operationMode": "Server"
+        }
+      },
       "itemUIErrors": {
         "type": "sap.ui.model.json.JSONModel",
         "settings": {
@@ -91,8 +108,6 @@
           }
         }
       }
-
-
 		},
 
 		"routing": {

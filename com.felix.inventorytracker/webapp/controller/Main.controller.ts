@@ -1,22 +1,9 @@
-import { IItem } from "../interfaces/Item";
+import BaseController from "./BaseController";
 
-sap.ui.define([
-	"./BaseController",
-	"sap/ui/core/Messaging",
-	"sap/m/MessageBox"
-], function (BaseController, Messaging, MessageBox) {
-	"use strict";
+export default class MainController extends BaseController {
+	onInit(): void {}
 
-	return BaseController.extend("com.felix.inventoryTracker.controller.Main", {
-
-		onInit: function () {
-			console.log("HELLLLO");
-			Messaging.registerObject(this.getView(), true);
-		},
-
-		onCreate(){
-			this.getRouter().navTo("new-item");
-		}
-
-	});
-});
+	onCreate(): void {
+		this.getRouter().navTo("new-item");
+	}
+}

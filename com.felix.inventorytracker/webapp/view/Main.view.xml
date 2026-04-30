@@ -16,7 +16,7 @@
     <Toolbar>
       <Title text="Items"/>
       <ToolbarSpacer/>
-      <Button text="Create" press=".onCreate"/>
+	<Button text="Create" press="onCreate"/>
     </Toolbar>
   </customHeader>
 		<content>

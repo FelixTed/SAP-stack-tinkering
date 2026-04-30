@@ -1,10 +1,8 @@
-sap.ui.define(["./BaseController"], function (BaseController) {
-	"use strict";
+import BaseController from "./BaseController";
 
-	return BaseController.extend("com.felix.inventoryTracker.controller.App", {
-		onInit: function () {
-			// apply content density mode to root view
-			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-		}
-	});
-});
+export default class App extends BaseController {
+	onInit(): void {
+		const component = this.getOwnerComponent() as { getContentDensityClass: () => string };
+		this.getView().addStyleClass(component.getContentDensityClass());
+	}
+}

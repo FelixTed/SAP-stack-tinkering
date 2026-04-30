@@ -53,7 +53,33 @@
             <Label text="Item Location" />
           </form:label>
           <form:fields>
-            <Input valueState="{= ${itemUIErrors>/location} ? 'Error': 'None'}" valueStateText="{itemUIErrors>/location}" value="{draft>/location}" type="Text" width="100%" placeholder="Enter location" />
+            <Input
+              valueState="{= ${itemUIErrors>/location} ? 'Error': 'None'}"
+              valueStateText="{itemUIErrors>/location}"
+              value="{draft>/location}"
+              type="Text"
+              width="100%"
+              placeholder="Enter location"
+              showValueHelp="true"
+              valueHelpRequest=".onValueHelpRequest"
+            />
+          </form:fields>
+        </form:FormElement>
+        <form:FormElement>
+          <form:fields>
+            <SelectDialog
+              id="cityValueHelp"
+              title="Select City"
+              items="{cities>/}"
+              search=".onSearch"
+              confirm=".onCityConfirm"
+              cancel=".onValueHelpCancel"
+            >
+              <StandardListItem
+                title="{cities>name}"
+                description="{cities>country}"
+              />
+            </SelectDialog>
           </form:fields>
         </form:FormElement>
       </form:FormContainer>
