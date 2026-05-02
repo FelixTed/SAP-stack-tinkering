@@ -9,6 +9,8 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import BaseController from "./BaseController";
 import ItemValidator from "../model/ItemValidator";
 import type { IItem } from "../interfaces/Item";
+import Filter from "sap/ui/model/Filter";
+import FilterOperator from "sap/ui/model/FilterOperator";
 
 export default class FormController extends BaseController {
 	onInit(): void {

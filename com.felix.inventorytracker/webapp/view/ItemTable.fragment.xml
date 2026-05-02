@@ -2,9 +2,10 @@
   xmlns='sap.m'
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:core="sap.ui.core"
-
+  showNavButton="true"
 >
 <Table
+      itemPress=".onItemPress"
       headerText="Items"
       id="itemsTable"
       items="{
@@ -14,6 +15,13 @@
 
       }"
       >
+      <headerToolbar>
+        <Toolbar>
+          <Label id="tableHeader" text="Items toolbar"/>
+          <ToolbarSpacer />
+          <SearchField id="searchField" width="auto" search=".onFilterPosts" />
+        </Toolbar>
+      </headerToolbar>
       <columns>
         <Column >
           <header><Text text="Name"></Text></header>
@@ -29,7 +37,7 @@
         </Column>
       </columns>
       <items>
-          <ColumnListItem>
+          <ColumnListItem type="Navigation">
             <cells>
                 <Text text="{items>name}" />
                 <Text text="{items>quantity}" />
